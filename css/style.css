@@ -6,3 +6,9 @@ button {
 .container {
     width: 1000px
 }
+
+#retry-button {
+    width: 150px;
+    height: 50px;
+    display: block;
+}
