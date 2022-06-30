@@ -18,29 +18,13 @@ let min = 1;
 let max = 5;
 let sum = 0;
 
-userChoice = prompt(`scegli ${even} o ${odd}`).trim().toLowerCase();
-console.log('Il giocatore ha scelto: ' + userChoice);
-
-while (userChoice !== 'pari' && userChoice !== 'dispari') {
-    userChoice = prompt(`scegli ${even} o ${odd}`).trim().toLowerCase();
-}
-
-userNumber = parseInt(prompt(`scegli un numero tra ${min} e ${max}`));
-console.log('Il numero del giocatore è: ' + userNumber);
-
 function randomizeNumber(min, max) {
 
-    pcRandomNumber = Math.floor(Math.random() * max) + min;
+    pcRandomNumber = Math.floor(Math.random() * (max + 1 - min)) + min;
     let result = parseInt(pcRandomNumber);
 
     return result;
 }
-
-pcRandomNumber = randomizeNumber(min, max)
-console.log('Il numero del PC è: ' + pcRandomNumber)
-
-sum = pcRandomNumber + userNumber;
-console.log('La somma è: ' + sum);
 
 function isEven(sum) {
     let message = 'dispari';
@@ -51,6 +35,24 @@ function isEven(sum) {
 
     return message;
 }
+
+userChoice = prompt(`scegli ${even} o ${odd}`).trim().toLowerCase();
+console.log('Il giocatore ha scelto: ' + userChoice);
+
+while (userChoice !== 'pari' && userChoice !== 'dispari') {
+    userChoice = prompt(`scegli ${even} o ${odd}`).trim().toLowerCase();
+}
+
+userNumber = parseInt(prompt(`scegli un numero tra ${min} e ${max}`));
+console.log('Il numero del giocatore è: ' + userNumber);
+
+
+pcRandomNumber = randomizeNumber(min, max)
+console.log('Il numero del PC è: ' + pcRandomNumber)
+
+sum = pcRandomNumber + userNumber;
+console.log('La somma è: ' + sum);
+
 
 message = isEven(sum);
 console.log(message);
