@@ -18,8 +18,13 @@ let min = 1;
 let max = 5;
 let sum = 0;
 
-userChoice = prompt(`scegli ${even} o ${odd}`);
+userChoice = prompt(`scegli ${even} o ${odd}`).trim().toLowerCase();
 console.log('Il giocatore ha scelto: ' + userChoice);
+
+while (userChoice !== 'pari' && userChoice !== 'dispari') {
+    userChoice = prompt(`scegli ${even} o ${odd}`).trim().toLowerCase();
+}
+
 userNumber = parseInt(prompt(`scegli un numero tra ${min} e ${max}`));
 console.log('Il numero del giocatore è: ' + userNumber);
 
